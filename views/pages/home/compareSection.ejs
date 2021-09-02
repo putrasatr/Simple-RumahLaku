@@ -1,0 +1,15 @@
+<div class="col-for-drop-box">
+    <div class="box-drop">
+        <% for(let i=1; i <=6; i++){%>
+            <div ondrop="drop(event)" ondragover="allowDrop(event)" class="box-ondrop"></div>
+            <% } %>
+    </div>
+    <div class="col-compare" style="width: 200px;height: 30px;margin:10px 0">
+        <a href="/">
+            <button type="reset" class="btn btn-warning" style="width:50px;margin-left: 10px;">
+                <img src="/images/icon/refresh-24px.svg" alt="">
+            </button>
+        </a>
+        <button class="btn btn-dark" id="compare" type="button" style="width:60%;">Bandingkan</button>
+    </div>
+</div>

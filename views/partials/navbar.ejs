@@ -1,0 +1,97 @@
+<nav class="navbar navbar-expand-md navbar-white fixed-top">
+    <div class="container d-flex row">
+        <ul class="nav_container">
+            <%navLinks.forEach(({title,pathTo},i)=>{%>
+                <li class="">
+                    <a href="<%=pathTo%>" class="nav-link">
+                        <span class="text_link">
+                            <%=title%>
+                        </span>
+                    </a>
+                </li>
+                <%})%>
+        </ul>
+        <div class="nav_logo">
+            <a href="/">
+                <h1>Selling House</h1>
+            </a>
+        </div>
+        <div class="nav_drop">
+            <%if(user==undefined){%>
+                <a href="/signin" class="nav-link">
+                    <span>Sign In</span>
+                </a>
+                <a href="/signup" class="nav-link">
+                    <span>Sign Up</span>
+                </a>
+                <%}else{%>
+                    <a href="#" id="toggle_profile">
+                        <span>
+                            <%=user.username%>
+                        </span>
+                    </a>
+                    <%}%>
+        </div>
+    </div>
+</nav>
+<style>
+    #toggle_profile {
+        position: relative;
+    }
+
+    .toggle {
+        position: absolute;
+        left: 0;
+        background-color: #fcfceb;
+        -webkit-box-shadow: 0px 10px 50px rgb(0 0 0 / 10%);
+        box-shadow: 0px 10px 50px rgb(0 0 0 / 10%);
+        transition: all 0.5s ease-in-out;
+        padding: 20% 10px;
+        width: 140%;
+    }
+
+    .toggle_section {
+        padding: 10px;
+        border-bottom: 1px solid #eaeaea;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .toggle_section span {
+        color: #7a7a7a;
+    }
+
+    .toggle_section span:hover {
+        background-color: #252525;
+        transition: all 0.3s ease-in-out;
+        color: white;
+    }
+</style>
+<script lang="javascript">
+    $(document).on("ready", () => {
+        handleHoverUsername()
+    })
+    const toggleTag = `<div class="toggle">
+                            <div class="toggle_section">
+                                <span>Profile</span>
+                            </div>
+                            <div class="toggle_section">
+                                <span>Edit Profile</span>
+                                <span>My Post</span>
+                            </div>
+                            <div class="toggle_section">
+                                <span>Settings</span>
+                                <span>Sign Out</span>
+                            </div>
+                        </div>`
+    const handleHoverUsername = () => {
+        $("#toggle_profile").hover(
+            function () {
+                $(this).append($(toggleTag));
+            }, function () {
+                $(this).find(".toggle").last().remove();
+            }
+        );
+    }
+
+</script>

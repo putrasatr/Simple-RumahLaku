@@ -1,0 +1,82 @@
+<%- include('../../partials/header') %>
+    <style>
+        #card-for-compare {
+            box-shadow: 0 10px 10px 0 grey;
+            border-radius: 20px;
+
+        }
+    </style>
+
+    <body>
+
+        <div class="container compare">
+            <h1>Hasil Perbandingan</h1>
+            <hr>
+            <div class="card card-for-compare">
+                <div class="row" id="row">
+
+                </div>
+            </div>
+
+        </div>
+
+        <script>
+            const API_URL = "http://localhost:3000/api/index";
+
+            $(document).ready(function () {
+                compareData()
+            })
+
+            const compareData = () => {
+                let id = location.search.slice(1).split("&")[0].split("=")[1]
+                $.ajax({
+                    url: `${API_URL}/compare/${id.toString()}`,
+                    method: 'GET',
+                    dataType: 'json'
+                }).done(function (data) {
+                    
+                    let html = ``
+                    data.forEach(item => {
+                        let foto = item.foto.split(',')
+                        html += `
+                        
+  <div class="col-sm-6 mb-0 md-0 ">
+    <div class="card" style="background-color:black;color:white;">
+      <div class="card-body" id="card-for-compare">
+        <img class="card-img-top col-sm-6"  src="/images/upload/${foto[0]}">
+        <h5 class="card-title"></h5>
+        <p class="card-text"><strong>${item.judul}</strong></p>
+        <p class="card-text">${item.deskripsi}</p>
+        <div  class="btn btn-info">Rp. ${item.harga}</div>
+    <div class="crad-title text-muted" style="font-size:30px"><strong class="fs-1">Deskripsi</strong>:</div>
+        <div class="clear-custom">
+                <div class="col-sm-4 col-md-6 col-xs-12 no-padding">
+                    <span><strong>Tanggal</strong> :</span> 2021-01-27
+                </div>
+                <div class="col-sm-4 col-md-6 col-xs-12 no-padding">
+                    <span><strong>Kamar Tidur</strong> :</span> 2 Buah
+                </div>
+                <div class="col-sm-4 col-md-6 col-xs-12 no-padding">
+                    <span><strong>Kamar Mandi</strong> :</span> 2 Buah
+                </div>
+                <div class="col-sm-4 col-md-6 col-xs-12 no-padding">
+                    <span><strong>Luas Tanah</strong> :</span>
+                    1213 <strong>M2</strong>
+                </div>
+                <div class="col-sm-12 col-md-12 col-xs-12 no-padding">
+                    <span><strong>Lokasi</strong> :</span>
+                    Cerita Gunung Dan Laut
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>
+        <hr> `
+                    });
+                    $('.card-for-compare #row').html(html)
+                }).fail(function (jqXHR, textStatus) {
+                    alert("Request Failed Get Data: " + textStatus);
+                })
+            }
+        </script>
+        <%- include('../../partials/footer') %></div>

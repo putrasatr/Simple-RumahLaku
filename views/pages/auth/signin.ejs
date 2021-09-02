@@ -1,0 +1,39 @@
+<%- include('../../partials/header') %>
+    <link rel="stylesheet" href="/stylesheets/signin.css">
+    <div class="container container_signin_card">
+        <!-- <form> -->
+        <form class="card_form" id="signin-form">
+            <div class="header_form d-flex">
+                <a href="/">
+                    <h2 class="nav_logo">Selling House</h2>
+                </a>
+            </div>
+            <div class="card_input_form d-flex">
+                <div id="message">
+                    
+                </div>
+                <div class="form_row">
+                    <label for="email">
+                        <span>Email</span>
+                    </label>
+                    <input class="input_text" type="text" placeholder="Enter email..." name="email" id="email" required>
+                </div>
+                <div class="form_row">
+                    <label for="password">
+                        <span>Password</span>
+                    </label>
+                    <input class="input_text" type="text" placeholder="Enter password..." name="password" id="password"
+                        required>
+                </div>
+                <button class="btn btn-secondary my-2 w-10" type="submit">Sign In</button>
+            </div>
+            <div class="footer_form">
+                <span>New at Selling House? Sign Up</span>
+            </div>
+            <!-- </div> -->
+        </form>
+    </div>
+
+    <script type="text/javascript" src="/jquery/auth/index.js"></script>
+    <%- include('../../partials/footer') %>
+        </form>

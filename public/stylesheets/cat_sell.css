@@ -1,0 +1,115 @@
+.box-drop {
+    width: 380px;
+    height: 460px;
+    border: 2px solid rgb(161, 156, 156);
+    border-style: dashed;
+    margin: 10px;
+    float: left;
+}
+
+.card {
+    box-shadow: 0 10px 10px 0 grey;
+}
+
+.card-img-top {
+    border: none;
+    cursor: pointer;
+}
+
+.card-image :hover {
+    border-radius: 15px;
+    box-shadow: 0 4px 10px 0 grey;
+}
+
+.col-for-drop-box {
+    padding: 30px;
+    width: 100%;
+    height: 600px;
+    border: 1px solid rgb(231, 230, 230);
+}
+
+.drop-procedure {
+    float: right;
+    margin-top: 10px;
+    width: 240px;
+    height: 170px;
+    border: 1px solid salmon;
+    text-align: center;
+}
+
+.negotiable {
+    color: grey;
+    font-size: small;
+}
+
+.nav-link {
+    font-size: large;
+    padding: 15px;
+}
+
+.drag-drop {
+    border: 2px solid rgb(160, 159, 159);
+    border-style: dashed;
+}
+
+h1 {
+    color: grey;
+    font-family: fantasy;
+}
+
+.navbars {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .8);
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -moz-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -moz-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-bottom: 4px solid #fff;
+    font-size: .9375rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.navbars:hover {
+    color: rgb(0, 0, 0);
+}
+
+#pagination-butt {
+    border-radius: 100%;
+    box-shadow: 0 3px 3px 0 grey;
+    background-color: rgba(255, 255, 255, 0.03);
+    margin-right: 10px;
+}
+
+#pagination-butt :hover {
+    border-radius: 100%;
+    background-color: rgb(170, 165, 165);
+}
+
+#pagination-butt button {
+    border-radius: 100%;
+    box-shadow: 0 1px 3px 0 grey;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+#pagination-butt button:hover {
+    border-radius: 100%;
+    background-color: rgb(170, 165, 165);
+}
