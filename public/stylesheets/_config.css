@@ -1,38 +1,10 @@
-.navbar {
-    background-color: ivory;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.nav_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 30%;
-    padding: 10px;
-}
-
-.nav_logo {
-    color: grey;
-    font-family: fantasy;
-}
-
-.nav_drop {
-    width: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 10px;
-}
-
 .text_link:hover {
     border-bottom: 1px solid black;
     transition: all 0.3s ease-in-out;
 }
 
 .container_footer {
+    overflow: hidden;
     margin-top: 50px;
     background-color: #252525;
     color: white;
@@ -86,4 +58,40 @@
 .copyright {
     width: 100%;
     padding-left: 50%;
+}
+
+@media screen and (max-width: 960px) {
+    .row_section_footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .reach-me{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .footer_link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer_info,.copyright{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    .reach-me-section{
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+    }
 }
