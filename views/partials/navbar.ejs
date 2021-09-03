@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-md navbar-white fixed-top">
-    <div class="container d-flex row">
-        <ul class="nav_container">
+<nav class="_navbar  fixed-top">
+    <div class="container d-flex row navbar__container">
+        <ul class="nav_menu">
             <%navLinks.forEach(({title,pathTo},i)=>{%>
                 <li class="">
                     <a href="<%=pathTo%>" class="nav-link">
@@ -11,6 +11,10 @@
                 </li>
                 <%})%>
         </ul>
+        <div class="navbar__toggle" id="mobile-menu">
+            <span class="bar"></span> <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
         <div class="nav_logo">
             <a href="/">
                 <h1>Selling House</h1>
